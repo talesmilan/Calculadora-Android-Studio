@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private float segundoNumero;
     private float resultado;
     private boolean virgulaDigitada;
-    private int contadorDeDigitos;
     private int sinal;
     private int passo;
     private TextView visor;
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor = "";
-                contadorDeDigitos = 0;
                 visor.setText("0");
                 virgulaDigitada = false;
                 sinal = 0;
@@ -73,13 +71,11 @@ public class MainActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                if (contadorDeDigitos > 1) {
-                    contadorDeDigitos--;
+                if (numeroVisor.length() > 0) {
                     numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
                     visor.setText(numeroVisor);
                 } else {
                     numeroVisor = "";
-                    contadorDeDigitos = 0;
                     visor.setText("0");
                 }
 
@@ -175,6 +171,13 @@ public class MainActivity extends AppCompatActivity {
                         virgulaDigitada = true;
                         visor.setText(numeroVisor);
                     }
+
+                } else if (numeroVisor.length() == 0  && !numeroVisor.equals("-")) {
+                    if (!virgulaDigitada) {
+                        numeroVisor += "0.";
+                        virgulaDigitada = true;
+                        visor.setText(numeroVisor);
+                    }
                 }
             }
         });
@@ -183,7 +186,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "1";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -192,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "2";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -201,7 +202,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "3";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -210,7 +210,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "4";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -219,7 +218,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "5";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -228,7 +226,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "6";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -237,7 +234,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "7";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -246,7 +242,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "8";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -255,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
                 numeroVisor += "9";
-                contadorDeDigitos++;
                 visor.setText(numeroVisor);
             }
         });
@@ -263,9 +257,11 @@ public class MainActivity extends AppCompatActivity {
         botao0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                if (contadorDeDigitos > 0) {
+                if (numeroVisor.length() > 0 && !numeroVisor.equals("-0")) {
                     numeroVisor += "0";
                     visor.setText(numeroVisor);
+                } else if (numeroVisor.length() == 0 && !numeroVisor.equals("-0")) {
+                    visor.setText("0");
                 }
             }
         });
