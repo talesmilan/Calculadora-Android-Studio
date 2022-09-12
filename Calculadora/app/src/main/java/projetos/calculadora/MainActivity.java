@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 contadorDeDigitos = 0;
                 visor.setText("0");
                 virgulaDigitada = false;
+                sinal = 0;
             }
         });
 
