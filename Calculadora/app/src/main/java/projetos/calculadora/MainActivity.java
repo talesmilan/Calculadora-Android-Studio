@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Iniciando variáveis
         numeroVisor = "";
         primeiroNumero = 0;
         segundoNumero = 0;
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         virgulaDigitada = false;
 
         visor = (TextView) findViewById(R.id.visor);
-
         ac = (Button) findViewById(R.id.botaoAC);
         mais = (Button) findViewById(R.id.botaoMais);
         menos = (Button) findViewById(R.id.botaoMenos);
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         botao0 = (Button) findViewById(R.id.botao0);
 
 
-        //Programando os botões
+        //Programando o botão AC
         ac.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                 sinal = 0;
             }
         });
-
+        //Programando o botão backspace
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        //Programando o botão de soma
         mais.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -95,7 +95,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão de subtração
         menos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -106,14 +106,14 @@ public class MainActivity extends AppCompatActivity {
                     numeroVisor = "";
                     sinal = 2;
                     virgulaDigitada = false;
-                } else if (numeroVisor.length() == 0 && sinal == 0) {
+                } else if (numeroVisor.length() == 0) {
                     numeroVisor += "-";
                     visor.setText(numeroVisor);
 
                 }
             }
         });
-
+        //Programando o botão de multiplicação
         vezes.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -127,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão de divisão
         dividir.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão de resultado
         igual.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -167,7 +167,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão de virgula
         virgula.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 1
         botao1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -200,7 +200,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 2
         botao2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -214,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 3
         botao3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 4
         botao4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -242,7 +242,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 5
         botao5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -256,7 +256,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 6
         botao6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -270,7 +270,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 7
         botao7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 8
         botao8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -298,7 +298,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Programando o botão do número 9
         botao9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
@@ -313,7 +313,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
+        //Programando o botão do número 0
         botao0.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
