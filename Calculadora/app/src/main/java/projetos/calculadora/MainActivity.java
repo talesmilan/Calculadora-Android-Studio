@@ -157,6 +157,12 @@ public class MainActivity extends AppCompatActivity {
                         resultado = dividir(primeiroNumero, segundoNumero);
                     }
                     numeroVisor = String.valueOf(resultado);
+                    char ultimoDigito = numeroVisor.charAt(numeroVisor.length()-1);
+                    char verificaVirgula = numeroVisor.charAt(numeroVisor.length() - 2);
+                    if (ultimoDigito == '0' && verificaVirgula == '.') {
+                        int resultado2 = (int) resultado;
+                        numeroVisor = String.valueOf(resultado2);
+                    }
                     visor.setText(numeroVisor);
                 }
             }
@@ -171,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
                         virgulaDigitada = true;
                         visor.setText(numeroVisor);
                     }
-
                 } else if (numeroVisor.length() == 0  && !numeroVisor.equals("-")) {
                     if (!virgulaDigitada) {
                         numeroVisor += "0.";
@@ -185,72 +190,127 @@ public class MainActivity extends AppCompatActivity {
         botao1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "1";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "1";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "1";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "2";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "2";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "2";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "3";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "3";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "3";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "4";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "4";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "4";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "5";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "5";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "5";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "6";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "6";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "6";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "7";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "7";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "7";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "8";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "8";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "8";
+                    visor.setText(numeroVisor);
+                }
             }
         });
 
         botao9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // Faça algo em resposta ao botão
-                numeroVisor += "9";
-                visor.setText(numeroVisor);
+                if (!numeroVisor.equals("-0")) {
+                    numeroVisor += "9";
+                    visor.setText(numeroVisor);
+                } else {
+                    numeroVisor = numeroVisor.substring(0, numeroVisor.length() -1 );
+                    numeroVisor += "9";
+                    visor.setText(numeroVisor);
+                }
+
             }
         });
 
