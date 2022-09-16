@@ -157,12 +157,7 @@ public class MainActivity extends AppCompatActivity {
                         resultado = dividir(primeiroNumero, segundoNumero);
                     }
                     numeroVisor = String.valueOf(resultado);
-                    char ultimoDigito = numeroVisor.charAt(numeroVisor.length()-1);
-                    char verificaVirgula = numeroVisor.charAt(numeroVisor.length() - 2);
-                    if (ultimoDigito == '0' && verificaVirgula == '.') {
-                        int resultado2 = (int) resultado;
-                        numeroVisor = String.valueOf(resultado2);
-                    }
+                    numeroVisor = tirarZero(numeroVisor);
                     visor.setText(numeroVisor);
                 }
             }
@@ -329,7 +324,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     //Função que soma dois números
     public float somar(float a, float b) {
         return a + b;
@@ -348,6 +342,18 @@ public class MainActivity extends AppCompatActivity {
     //Função que multiplica dois números
     public float multiplicar(float a, float b) {
         return a * b;
+    }
+
+    //Função que tira o ".0" do final do número float
+    public String tirarZero(String numero) {
+        char ultimoDigito = numero.charAt(numero.length()-1);
+        char verificaVirgula = numero.charAt(numero.length() - 2);
+        if (ultimoDigito == '0' && verificaVirgula == '.') {
+            float resultadoFloat = Float.parseFloat(numero);
+            int resultadoInt = (int) resultadoFloat;
+            numero = String.valueOf(resultadoInt);
+        }
+        return numero;
     }
 
 }
